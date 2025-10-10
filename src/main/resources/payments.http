@@ -1,0 +1,9 @@
+POST http://localhost:8080/payments
+X-Payer-Id: 1
+Content-Type: application/json
+
+{
+  "amount": 100.50,
+  "currencyCode": "RUB",
+  "recipientId": 2
+}
