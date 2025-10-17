@@ -1,7 +1,6 @@
 package com.example.payments.utils;
 
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.UtilityClass;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;

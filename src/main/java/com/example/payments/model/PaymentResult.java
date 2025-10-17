@@ -8,5 +8,5 @@ import java.math.BigDecimal;
 public record PaymentResult (
         Long paymentId,
         BigDecimal amountRub,
-        BigDecimal fee
+        Fee fee
 ){}

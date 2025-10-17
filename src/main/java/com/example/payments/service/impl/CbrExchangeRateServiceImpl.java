@@ -1,7 +1,6 @@
-package com.example.payments.adapters;
+package com.example.payments.service.impl;
 
-import com.example.payments.ports.ExchangeRateService;
-import org.springframework.cache.annotation.Cacheable;
+import com.example.payments.service.ExchangeRateService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -13,11 +12,11 @@ import java.util.Map;
  * To keep the sample self-contained and offline-friendly, we return stubbed rates.
  */
 @Service
-public class CbrExchangeRateService implements ExchangeRateService {
+public class CbrExchangeRateServiceImpl implements ExchangeRateService {
 
     private final WebClient webClient;
 
-    public CbrExchangeRateService(WebClient.Builder builder) {
+    public CbrExchangeRateServiceImpl(WebClient.Builder builder) {
         this.webClient = builder.build();
     }
 

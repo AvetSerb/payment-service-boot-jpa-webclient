@@ -1,6 +1,6 @@
 package com.example.payments.dto;
 
-import com.example.payments.domain.User;
+import com.example.payments.model.User;
 import lombok.Builder;
 
 import java.math.BigDecimal;
@@ -14,6 +14,5 @@ public record PaymentDto(
         User payer,
         User recipient,
         LocalDate bookingDate
-) {
-}
+) {}
 

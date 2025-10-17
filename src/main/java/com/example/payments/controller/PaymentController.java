@@ -1,5 +1,6 @@
-package com.example.payments.web;
+package com.example.payments.controller;
 
+import com.example.payments.model.PaymentCommand;
 import com.example.payments.service.PaymentService;
 import com.example.payments.web.dto.PaymentRequest;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,15 @@ public class PaymentController {
     @PostMapping
     public ResponseEntity<?> pay(@RequestHeader("X-Payer-Id") Long payerId,
                                  @Validated @RequestBody PaymentRequest dto) {
-        Long paymentId = paymentService.processPayment(dto.amount(), dto.currencyCode(), payerId, dto.recipientId());
-        return ResponseEntity.ok(Map.of("paymentId", paymentId));
+
+        var paymentRequest = PaymentCommand.builder()
+                .amount(dto.amount())
+                .currencyCode(dto.currencyCode())
+                .payerId(payerId)
+                .recipientId(dto.recipientId())
+                .build();
+
+//        paymentService.process(paymentRequest);
+        return ResponseEntity.ok(Map.of("payment", paymentService.process(paymentRequest)));
     }
 }

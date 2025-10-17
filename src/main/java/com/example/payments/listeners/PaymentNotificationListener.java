@@ -1,20 +1,19 @@
-package com.example.payments.service;
+package com.example.payments.listeners;
 
-import com.example.payments.ports.NotificationService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.payments.listeners.events.PaymentCreatedEvent;
+import com.example.payments.service.NotificationService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 
+@Slf4j
 @Component
+@RequiredArgsConstructor
 public class PaymentNotificationListener {
-    private static final Logger log = LoggerFactory.getLogger(PaymentNotificationListener.class);
-    private final NotificationService notificationService;
 
-    public PaymentNotificationListener(NotificationService notificationService) {
-        this.notificationService = notificationService;
-    }
+    private final NotificationService notificationService;
 
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void onPaymentCreated(PaymentCreatedEvent event) {

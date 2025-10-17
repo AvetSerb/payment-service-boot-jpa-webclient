@@ -1,6 +1,6 @@
 package com.example.payments.service;
 
-import com.example.payments.domain.User;
+import com.example.payments.model.User;
 
 import java.util.Optional;
 

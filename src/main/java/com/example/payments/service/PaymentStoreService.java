@@ -1,8 +1,8 @@
 package com.example.payments.service;
 
-import com.example.payments.domain.Payment;
+import com.example.payments.model.Payment;
 
-public interface PaymentStore {
+public interface PaymentStoreService {
     Payment save(Payment payment);
     Long transactionalSave(Payment payment, Long id);
 

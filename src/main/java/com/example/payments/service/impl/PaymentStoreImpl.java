@@ -1,13 +1,14 @@
-package com.example.payments.service;
+package com.example.payments.service.impl;
 
-import com.example.payments.domain.Payment;
+import com.example.payments.model.Payment;
 import com.example.payments.repo.PaymentRepository;
+import com.example.payments.service.PaymentStoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentStoreImpl implements PaymentStore {
+public class PaymentStoreImpl implements PaymentStoreService {
     private final PaymentRepository repo;
 
     @Override

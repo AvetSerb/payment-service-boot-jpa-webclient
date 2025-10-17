@@ -1,6 +1,6 @@
 package com.example.payments.service.impl;
 
-import com.example.payments.domain.User;
+import com.example.payments.model.User;
 import com.example.payments.repo.UserRepository;
 import com.example.payments.service.UserService;
 import lombok.RequiredArgsConstructor;
