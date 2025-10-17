@@ -1,9 +1,8 @@
 package com.example.payments.service;
 
-import java.math.BigDecimal;
+import com.example.payments.model.PaymentCommand;
+import com.example.payments.model.PaymentResult;
 
 public interface PaymentServices {
     PaymentResult process(PaymentCommand command);
-    record PaymentCommand(Long payerId, Long recipientId, BigDecimal amount, String currencyCode) {}
-    record PaymentResult(Long paymentId, BigDecimal amountRub, BigDecimal fee) {}
 }
