@@ -7,8 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class JpaFeeStore implements FeeStore{
+public class FeeStoreImpl implements FeeStore {
     private final FeeRepository repo;
+
     @Override
-    public Fee save(Fee fee) { return repo.save(fee); }
+    public Fee save(Fee fee) {
+        return repo.save(fee);
+    }
 }
