@@ -1,13 +1,15 @@
 package com.example.payments.adapters;
 
 import com.example.payments.ports.NotificationService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class NotificationServiceImpl implements NotificationService {
-    private static final Logger log = LoggerFactory.getLogger(NotificationServiceImpl.class);
+//    private static final Logger log = LoggerFactory.getLogger(NotificationServiceImpl.class);
 
     @Override
     public void notifyPaymentCreated(Long paymentId) {
