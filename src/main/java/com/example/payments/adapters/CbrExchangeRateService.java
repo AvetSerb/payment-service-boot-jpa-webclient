@@ -28,7 +28,7 @@ public class CbrExchangeRateService implements ExchangeRateService {
     );
 
     @Override
-    @Cacheable(cacheNames = "cbrRates", key = "#currencyCode")
+//    @Cacheable(cacheNames = "cbrRates", key = "#currencyCode")
     public BigDecimal rateForToday(String currencyCode, String targetCurrencyCode) {
         if (!"RUB".equalsIgnoreCase(targetCurrencyCode)) {
             throw new IllegalArgumentException("Only RUB target is supported in demo");

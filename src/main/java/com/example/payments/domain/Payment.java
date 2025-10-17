@@ -1,9 +1,8 @@
 package com.example.payments.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,6 +10,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "payments")
 @Getter @Setter @NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
 public class Payment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
